@@ -3,21 +3,21 @@ import SpeciesCard from '../components/SpeciesCard'
 import { species } from '../data/species'
 import { useDiscoveries } from '../hooks/useDiscoveries'
 
-const festivalDays = [
+const festivalExperiences = [
   {
-    number: '01',
+    kicker: 'IMERSÃO',
     title: 'A Mata',
-    text: 'Uma imersão na Mata Atlântica para reconhecer espécies, ingredientes e histórias — com um almoço preparado a partir de insumos da floresta.',
+    text: 'Uma vivência na Mata Atlântica para reconhecer espécies, ingredientes e histórias ligadas à floresta.',
   },
   {
-    number: '02',
+    kicker: 'GASTRONOMIA',
     title: 'A Cozinha',
-    text: 'Ingredientes nativos ganham novas leituras enquanto chefs cozinham diante do público e compartilham processos, sabores e possibilidades.',
+    text: 'Ingredientes nativos ganham novas leituras enquanto chefs cozinham, compartilham processos, sabores e possibilidades.',
   },
   {
-    number: '03',
-    title: 'O Encontro',
-    text: 'Um dia para aproximar pessoas, produtos e iniciativas que mantêm vivos os sabores e conhecimentos ligados à Mata Atlântica.',
+    kicker: 'ENCONTRO',
+    title: 'A Feira',
+    text: 'Um espaço para aproximar público, produtores e iniciativas que mantêm vivos os sabores e conhecimentos da Mata Atlântica.',
   },
 ]
 
@@ -42,7 +42,7 @@ export default function Home() {
             Uma experiência para descobrir espécies, ingredientes, histórias e outras formas de se relacionar com a floresta.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#festival">Conhecer o Festival</a>
+            <a className="button button-primary" href="#sobre">Conhecer o Festival</a>
             <Link className="button button-ghost" to="/especies">Explorar espécies</Link>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function Home() {
 
       <section className="manifesto-section" id="festival">
         <div className="container manifesto-grid">
-          <span className="eyebrow">PORQUE GABIROBA?</span>
+          <span className="eyebrow">POR QUE GABIROBA?</span>
           <div>
             <p className="manifesto-lead">
               Gabiroba é o nome de uma fruta pequena, verde e ácida que nasce onde a Mata Atlântica ainda resiste.
@@ -79,19 +79,19 @@ export default function Home() {
       <section className="days-section container">
         <header className="compact-heading">
           <div>
-            <span className="eyebrow">TRÊS DIAS DE EXPERIÊNCIA</span>
+            <span className="eyebrow">O QUE VOCÊ VAI ENCONTRAR</span>
             <h2>Da mata ao encontro.</h2>
           </div>
-          <p>Uma jornada em três momentos, conectados pela biodiversidade e pela comida.</p>
+          <p>Experiências que conectam biodiversidade, gastronomia, cultura e pessoas — sem prender o conteúdo a uma programação por dia.</p>
         </header>
 
         <div className="days-grid">
-          {festivalDays.map((day) => (
-            <article className="day-card" key={day.number}>
-              <span className="day-number">{day.number}</span>
+          {festivalExperiences.map((experience) => (
+            <article className="day-card" key={experience.title}>
               <div>
-                <h3>{day.title}</h3>
-                <p>{day.text}</p>
+                <span className="day-kicker">{experience.kicker}</span>
+                <h3>{experience.title}</h3>
+                <p>{experience.text}</p>
               </div>
             </article>
           ))}

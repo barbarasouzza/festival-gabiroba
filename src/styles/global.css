@@ -399,3 +399,26 @@ img { max-width: 100%; display: block; }
   line-height: 1.55;
   font-size: .9rem;
 }
+
+
+/* V7 — programação sem divisão por dias */
+.day-card {
+  display: block;
+  min-height: 0;
+}
+.day-kicker {
+  display: block;
+  margin-bottom: 10px;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--forest);
+  opacity: .72;
+}
+@media (min-width: 760px) {
+  .day-card {
+    min-height: 210px;
+    padding: 24px;
+  }
+}

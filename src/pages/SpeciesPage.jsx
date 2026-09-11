@@ -42,17 +42,17 @@ export default function SpeciesPage() {
           <figure className="species-feature-photo"><img src={item.image} alt={item.imageAlt || item.commonName} /></figure>
         </section>
 
-        <InfoSection number="01" title="Conheça" tone="cream"><p>{content.know}</p></InfoSection>
-        <InfoSection number="02" title="Uma história da mata" tone="sand"><p>{content.history}</p></InfoSection>
-        <InfoSection number="03" title={content.flavorsTitle || 'Sabores'} tone="mustard">
+        <InfoSection number="01" eyebrow="A ESPÉCIE" title="Conheça" tone="cream"><p>{content.know}</p></InfoSection>
+        <InfoSection number="02" eyebrow="MEMÓRIA E TERRITÓRIO" title="Uma história da mata" tone="sand"><p>{content.history}</p></InfoSection>
+        <InfoSection number="03" eyebrow="NA COZINHA" title={content.flavorsTitle || 'Sabores'} tone="mustard">
           <p>{content.flavors}</p>
           {content.chips?.length > 0 && <div className="chips">{content.chips.map((x) => <span key={x}>{x}</span>)}</div>}
         </InfoSection>
-        <InfoSection number="04" title="Na natureza" tone="green"><p>{content.nature}</p></InfoSection>
-        <InfoSection number="05" title="Cultive" tone="cream">
+        <InfoSection number="04" eyebrow="MATA ATLÂNTICA" title="Na natureza" tone="green"><p>{content.nature}</p></InfoSection>
+        <InfoSection number="05" eyebrow="CUIDADOS" title="Cultive" tone="cream">
           <div className="cultivation-grid">{content.cultivation.map(([label, text]) => <div key={label}><span>{label}</span><strong>{text}</strong></div>)}</div>
         </InfoSection>
-        <InfoSection number="06" title="Você sabia?" tone="pink"><p>{content.curiosity}</p></InfoSection>
+        <InfoSection number="06" eyebrow="CURIOSIDADE" title="Você sabia?" tone="pink"><p>{content.curiosity}</p></InfoSection>
 
         <footer className="species-footer container">
           <span className="eyebrow">FIM DA DESCOBERTA</span>
@@ -67,6 +67,6 @@ export default function SpeciesPage() {
   )
 }
 
-function InfoSection({ number, title, tone, children }) {
-  return <section className={`info-section tone-${tone}`}><div className="container info-section__inner"><span className="section-number">{number}</span><div><span className="eyebrow">{title.toUpperCase()}</span><h2>{title}</h2>{children}</div></div></section>
+function InfoSection({ number, eyebrow, title, tone, children }) {
+  return <section className={`info-section tone-${tone}`}><div className="container info-section__inner"><span className="section-number">{number}</span><div><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{children}</div></div></section>
 }
