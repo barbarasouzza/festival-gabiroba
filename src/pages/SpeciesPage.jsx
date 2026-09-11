@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import DiscoveryToast from '../components/DiscoveryToast'
+import SpeciesProgress from '../components/SpeciesProgress'
 import { getDisplayScientificName, species, speciesContent } from '../data/species'
 import { useDiscoveries } from '../hooks/useDiscoveries'
 
@@ -27,8 +28,9 @@ export default function SpeciesPage() {
     <>
       {showToast && <DiscoveryToast speciesName={item.commonName} total={discoveries.length + 1} onClose={() => setShowToast(false)} />}
       <article className="species-page">
+        <SpeciesProgress />
         <header className="species-hero poster-section">
-          <div className="container">
+          <div className="container species-hero__content" data-reveal>
             <span className="eyebrow">VOCÊ ENCONTROU ✦</span>
             <div className="species-hero__number">{String(item.id).padStart(2, '0')} / 20</div>
             <h1>{item.commonName}</h1>
@@ -38,7 +40,7 @@ export default function SpeciesPage() {
         </header>
 
 
-        <section className="species-art-panel">
+        <section className="species-art-panel species-photo-reveal" data-reveal>
           <figure className="species-feature-photo"><img src={item.image} alt={item.imageAlt || item.commonName} /></figure>
         </section>
 
@@ -54,7 +56,7 @@ export default function SpeciesPage() {
         </InfoSection>
         <InfoSection number="06" eyebrow="CURIOSIDADE" title="Você sabia?" tone="pink"><p>{content.curiosity}</p></InfoSection>
 
-        <footer className="species-footer container">
+        <footer className="species-footer container species-footer--reveal" data-reveal>
           <span className="eyebrow">FIM DA DESCOBERTA</span>
           <h2>Você conheceu {item.commonName}.</h2>
           <div className="hero-actions">
@@ -68,5 +70,16 @@ export default function SpeciesPage() {
 }
 
 function InfoSection({ number, eyebrow, title, tone, children }) {
-  return <section className={`info-section tone-${tone}`}><div className="container info-section__inner"><span className="section-number">{number}</span><div><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{children}</div></div></section>
+  return (
+    <section className={`info-section tone-${tone} info-section--journey`} data-reveal>
+      <div className="container info-section__inner">
+        <span className="section-number journey-number">{number}</span>
+        <div className="journey-copy">
+          <span className="eyebrow">{eyebrow}</span>
+          <h2>{title}</h2>
+          {children}
+        </div>
+      </div>
+    </section>
+  )
 }

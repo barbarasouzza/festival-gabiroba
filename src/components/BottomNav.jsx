@@ -5,7 +5,6 @@ export default function BottomNav() {
     <nav className="bottom-nav" aria-label="Navegação principal">
       <NavLink to="/" end>Início</NavLink>
       <NavLink to="/especies">Espécies</NavLink>
-      <NavLink to="/minha-trilha">Minha trilha</NavLink>
       <Link to="/#sobre">Sobre</Link>
     </nav>
   )

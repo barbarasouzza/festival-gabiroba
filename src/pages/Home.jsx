@@ -35,13 +35,13 @@ export default function Home() {
           <div className="botanical-shape botanical-a" />
           <div className="botanical-shape botanical-b" />
         </div>
-        <div className="container hero-content">
-          <span className="festival-kicker">FESTIVAL GABIROBA</span>
-          <h1>Gastronomia, floresta e os sabores da Mata Atlântica.</h1>
-          <p>
+        <div className="container hero-content hero-sequence">
+          <span className="festival-kicker hero-step hero-step-1">FESTIVAL GABIROBA</span>
+          <h1 className="hero-step hero-step-2">Gastronomia, floresta e os sabores da Mata Atlântica.</h1>
+          <p className="hero-step hero-step-3">
             Uma experiência para descobrir espécies, ingredientes, histórias e outras formas de se relacionar com a floresta.
           </p>
-          <div className="hero-actions">
+          <div className="hero-actions hero-step hero-step-4">
             <a className="button button-primary" href="#sobre">Conhecer o Festival</a>
             <Link className="button button-ghost" to="/especies">Explorar espécies</Link>
           </div>
@@ -49,7 +49,7 @@ export default function Home() {
       </section>
 
       <section className="about-strip" id="sobre">
-        <div className="container about-grid">
+        <div className="container about-grid" data-reveal>
           <span className="eyebrow">SOBRE O GABIROBA</span>
           <div>
             <h2>A Mata Atlântica também se conhece pela mesa.</h2>
@@ -61,7 +61,7 @@ export default function Home() {
       </section>
 
       <section className="manifesto-section" id="festival">
-        <div className="container manifesto-grid">
+        <div className="container manifesto-grid" data-reveal>
           <span className="eyebrow">POR QUE GABIROBA?</span>
           <div>
             <p className="manifesto-lead">
@@ -77,17 +77,17 @@ export default function Home() {
 
 
       <section className="days-section container">
-        <header className="compact-heading">
+        <header className="compact-heading" data-reveal>
           <div>
             <span className="eyebrow">O QUE VOCÊ VAI ENCONTRAR</span>
             <h2>Da mata ao encontro.</h2>
           </div>
-          <p>Experiências que conectam biodiversidade, gastronomia, cultura e pessoas — sem prender o conteúdo a uma programação por dia.</p>
+          <p>Experiências que conectam biodiversidade, gastronomia, cultura e pessoas.</p>
         </header>
 
         <div className="days-grid">
           {festivalExperiences.map((experience) => (
-            <article className="day-card" key={experience.title}>
+            <article className="day-card" key={experience.title} data-reveal>
               <div>
                 <span className="day-kicker">{experience.kicker}</span>
                 <h3>{experience.title}</h3>
@@ -99,7 +99,7 @@ export default function Home() {
       </section>
 
       <section className="trail-feature">
-        <div className="container trail-feature__grid">
+        <div className="container trail-feature__grid" data-reveal>
           <div>
             <span className="eyebrow">DESCUBRA A MATA</span>
             <h2>20 espécies. 20 histórias.</h2>
@@ -124,7 +124,7 @@ export default function Home() {
       </section>
 
       <section className="species-preview container">
-        <header className="compact-heading">
+        <header className="compact-heading" data-reveal>
           <div>
             <span className="eyebrow">COLEÇÃO DO FESTIVAL</span>
             <h2>Algumas espécies para começar.</h2>

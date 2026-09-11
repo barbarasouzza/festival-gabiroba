@@ -3,7 +3,7 @@ import { getDisplayScientificName } from '../data/species'
 
 export default function SpeciesCard({ item, discovered }) {
   return (
-    <Link className={`species-card ${discovered ? 'is-discovered' : ''}`} to={`/especies/${item.slug}`}>
+    <Link className={`species-card ${discovered ? 'is-discovered' : ''}`} to={`/especies/${item.slug}`} data-reveal>
       <div className="species-card__top">
         <span className="species-number">{String(item.id).padStart(2, '0')}</span>
         <span className="species-status">{discovered ? 'ENCONTRADA ✦' : 'DESCOBRIR →'}</span>

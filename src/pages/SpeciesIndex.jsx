@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SpeciesCard from '../components/SpeciesCard'
 import { species } from '../data/species'
 import { useDiscoveries } from '../hooks/useDiscoveries'
@@ -8,7 +9,7 @@ export default function SpeciesIndex() {
 
   return (
     <section className="container page-section species-index-page">
-      <header className="page-heading-compact">
+      <header className="page-heading-compact" data-reveal>
         <span className="eyebrow">COLEÇÃO DO FESTIVAL</span>
         <div className="page-heading-compact__row">
           <h1>Espécies para descobrir</h1>
@@ -17,12 +18,17 @@ export default function SpeciesIndex() {
         <p>Conheça as mudas presentes no Festival e acompanhe as espécies que você já encontrou pelos QR Codes.</p>
       </header>
 
-      <div className="trail-summary trail-summary--page">
+      <div className="trail-summary trail-summary--page" data-reveal>
         <div>
           <span className="eyebrow">SUA TRILHA</span>
           <strong>{discoveries.length} / 20 DESCOBERTAS</strong>
         </div>
         <div className="progress-track"><span style={{ width: `${progress}%` }} /></div>
+      </div>
+
+      <div className="species-index-actions" data-reveal>
+        <Link className="button button-primary" to="/minha-trilha">Ver minha trilha</Link>
+        <p>Acompanhe suas descobertas e veja quais espécies você já encontrou.</p>
       </div>
 
       <div className="species-grid species-grid--all">

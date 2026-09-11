@@ -5,11 +5,13 @@ import SpeciesPage from './pages/SpeciesPage'
 import TrailPage from './pages/TrailPage'
 import BottomNav from './components/BottomNav'
 import ScrollManager from './components/ScrollManager'
+import MotionManager from './components/MotionManager'
 
 export default function App() {
   return (
     <div className="app-shell">
       <ScrollManager />
+      <MotionManager />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
