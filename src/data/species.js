@@ -1,0 +1,263 @@
+export const species = [
+  { id: 1, slug: 'cambuci', commonName: 'Cambuci', scientificName: 'Campomanesia phaea', image: '/images/especies/cambuci.webp', imageAlt: 'Frutos verdes de cambuci com formato achatado e anguloso' },
+  { id: 2, slug: 'cipo-de-sao-joao', commonName: 'Cipó-de-São-João', scientificName: 'Pyrostegia venusta', image: '/images/especies/cipo-de-sao-joao.jpg', imageAlt: 'Cipó-de-São-João com flores alaranjadas' },
+  { id: 3, slug: 'uvaia', commonName: 'Uvaia', scientificName: 'Eugenia pyriformis', image: '/images/especies/uvaia.jpg', imageAlt: 'Frutos de uvaia em diferentes estágios de maturação' },
+  { id: 4, slug: 'eugenia-itapemirimensis', commonName: 'Eugênia itapemirimensis', scientificName: 'Eugenia itapemirimensis — validar taxonomia', image: '/images/especies/eugenia-itapemirimensis.jpg', imageAlt: 'Frutos pequenos em diferentes tons em um galho da Eugênia itapemirimensis' },
+  { id: 5, slug: 'tapereba', commonName: 'Taperebá', scientificName: 'Spondias mombin', image: '/images/especies/tapereba.jpg', imageAlt: 'Cachos de taperebá pendendo da árvore' },
+  { id: 6, slug: 'araca-roxo', commonName: 'Araçá-roxo', scientificName: 'Psidium myrtoides', image: '/images/especies/araca-roxo.jpg', imageAlt: 'Frutos de araçá-roxo em vários tons sobre os galhos' },
+  { id: 7, slug: 'mamao-jaracatia', commonName: 'Mamão-jaracatiá', scientificName: 'Jacaratia spinosa', image: '/images/especies/mamao-jaracatia.jpg', imageAlt: 'Frutos de mamão-jaracatiá pendendo do ramo junto a uma flor rosada' },
+  { id: 8, slug: 'figueira-branca', commonName: 'Figueira-branca', scientificName: 'Ficus sp. — validar espécie', image: '/images/especies/figueira-branca.webp', imageAlt: 'Pequenos frutos verdes em galhos de figueira-branca' },
+  { id: 9, slug: 'paineira-rosa', commonName: 'Paineira-rosa', scientificName: 'Ceiba speciosa', image: '/images/especies/paineira-rosa.jpg', imageAlt: 'Frutos e flor rosa da paineira-rosa' },
+  { id: 10, slug: 'araucaria', commonName: 'Araucária', scientificName: 'Araucaria angustifolia', image: '/images/especies/araucaria.jpg', imageAlt: 'Araucária vista de baixo com copa característica' },
+  { id: 11, slug: 'canela-amarela', commonName: 'Canela-amarela', scientificName: 'Lauraceae sp. — validar espécie', image: '/images/especies/canela-amarela.jpg', imageAlt: 'Folhas e inflorescências claras da canela-amarela' },
+  { id: 12, slug: 'bandarra', commonName: 'Bandarra', scientificName: 'Schizolobium parahyba? — validar muda', image: '/images/especies/bandarra.jpg', imageAlt: 'Árvore conhecida localmente como bandarra' },
+  { id: 13, slug: 'amescla-de-cheiro', commonName: 'Amescla-de-cheiro', scientificName: 'Protium heptaphyllum? — validar muda', image: '/images/especies/amescla-de-cheiro.jpg', imageAlt: 'Frutos em cachos da amescla-de-cheiro' },
+  { id: 14, slug: 'pitanga', commonName: 'Pitanga', scientificName: 'Eugenia uniflora', image: '/images/especies/pitanga.jpg', imageAlt: 'Pitangas vermelhas e verdes no galho' },
+  { id: 15, slug: 'jucara', commonName: 'Juçara', scientificName: 'Euterpe edulis', image: '/images/especies/jucara.jpg', imageAlt: 'Cachos de frutos escuros da palmeira juçara' },
+  { id: 16, slug: 'cabeludinha', commonName: 'Cabeludinha', scientificName: 'Myrciaria glazioviana? — validar muda', image: '/images/especies/cabeludinha.jpg', imageAlt: 'Frutos amarelos e aveludados da cabeludinha' },
+  { id: 17, slug: 'jatoba', commonName: 'Jatobá', scientificName: 'Hymenaea courbaril? — validar muda', image: '/images/especies/jatoba.jpg', imageAlt: 'Vagens escuras de jatobá na árvore' },
+  { id: 18, slug: 'biriba', commonName: 'Biribá', scientificName: 'Annona sp. — validar muda', image: '/images/especies/biriba.jpg', imageAlt: 'Fruto espinhoso associado ao nome biribá' },
+  { id: 19, slug: 'tucaneira', commonName: 'Tucaneira', scientificName: 'Citharexylum myrianthum? — validar muda', image: '/images/especies/tucaneira.jpg', imageAlt: 'Frutos alaranjados pendendo do galho da tucaneira' },
+  { id: 20, slug: 'guabiroba-gigante', commonName: 'Guabiroba-gigante', scientificName: 'Campomanesia sessiliflora var. sessiliflora? — validar muda', image: '/images/especies/guabiroba-gigante.jpg', imageAlt: 'Cachos de frutos verdes da guabiroba-gigante' },
+]
+
+
+export function getDisplayScientificName(scientificName = '') {
+  if (/validar/i.test(scientificName)) return ''
+  return scientificName.trim()
+}
+
+const c = (intro, know, history, flavorsTitle, flavors, nature, cultivation, curiosity, chips = [], validationNote = '') => ({ intro, know, history, flavorsTitle, flavors, nature, cultivation, curiosity, chips, validationNote })
+
+export const speciesContent = {
+  cambuci: c(
+    'Uma fruta nativa da Mata Atlântica, conhecida pelo formato achatado, aroma intenso e acidez marcante.',
+    'O cambucizeiro é uma árvore nativa do Sudeste e Sul do Brasil. Seu fruto verde, perfumado e de polpa ácida se tornou um dos símbolos da valorização de ingredientes nativos da Mata Atlântica.',
+    'Durante muito tempo o cambuci ficou restrito ao consumo local. Hoje reaparece em quintais, projetos de restauração e cozinhas que aproximam biodiversidade, memória e gastronomia.',
+    'Sabores',
+    'A acidez e o perfume fazem do cambuci um ingrediente versátil para doces e salgados, especialmente quando combinado com açúcar, laticínios, bebidas ou preparos mais gordurosos.',
+    'Seus frutos entram na dieta da fauna e a árvore faz parte da diversidade das formações florestais onde ocorre.',
+    [['SOL','Sol pleno ou meia-sombra'],['REGA','Regular no estabelecimento'],['SOLO','Fértil e bem drenado'],['PORTE','Árvore de médio porte'],['FLORAÇÃO','Sazonal'],['FRUTIFICAÇÃO','Sazonal; varia por região']],
+    'O nome cambuci também batiza bairros, rotas gastronômicas e iniciativas de conservação ligadas ao fruto.',
+    ['Suco','Geleia','Sorvete','Molhos','Bebidas']
+  ),
+  'cipo-de-sao-joao': c(
+    'Uma trepadeira de flores alaranjadas que transforma bordas de mata e suportes naturais em grandes manchas de cor.',
+    'O cipó-de-São-João é uma liana vigorosa. Suas flores tubulares e intensamente alaranjadas chamam atenção à distância e ajudam a explicar seu uso ornamental.',
+    'Seu nome popular remete à época de festas juninas, quando a floração costuma coincidir com o inverno em muitas regiões do Brasil.',
+    'Usos e relações',
+    'Aqui o interesse principal é botânico, paisagístico e ecológico. Não recomendamos uso culinário sem orientação especializada e identificação correta da planta.',
+    'Flores abundantes atraem visitantes florais e a trepadeira oferece cobertura e estrutura em ambientes de borda.',
+    [['SOL','Sol pleno favorece floração'],['REGA','Regular quando jovem'],['SOLO','Drenado e com matéria orgânica'],['PORTE','Trepadeira vigorosa'],['SUPORTE','Precisa de cerca, treliça ou árvore'],['PODA','Após a floração, quando necessário']],
+    'Uma única planta bem estabelecida pode cobrir grandes áreas quando encontra suporte.',
+    []
+  ),
+  uvaia: c(
+    'Fruto amarelo, muito aromático e de sabor entre o doce e o ácido.',
+    'A uvaieira é uma árvore da família das mirtáceas, a mesma de várias frutas nativas brasileiras. Seus frutos maduros ficam amarelos e exalam perfume intenso.',
+    'É uma fruta tradicional de quintais e pomares do Sul e Sudeste, hoje cada vez mais procurada por cozinhas interessadas em sabores nativos.',
+    'Sabores',
+    'A polpa pode ser consumida fresca e também funciona muito bem em sucos, sorvetes, geleias e sobremesas. Seu aroma costuma ser tão marcante quanto o sabor.',
+    'As flores e frutos participam das relações com polinizadores e animais frugívoros, contribuindo para a dinâmica da vegetação.',
+    [['SOL','Sol pleno'],['REGA','Regular no início'],['SOLO','Fértil e drenado'],['PORTE','Pequena a média árvore'],['FLORAÇÃO','Sazonal'],['FRUTIFICAÇÃO','Frutos delicados quando maduros']],
+    'Uvaia vem do tupi e costuma ser associada à ideia de fruta ácida.',
+    ['In natura','Suco','Sorvete','Geleia']
+  ),
+  'eugenia-itapemirimensis': c(
+    'Uma espécie do gênero Eugenia apresentada no festival como parte da diversidade de mirtáceas da Mata Atlântica.',
+    'O gênero Eugenia reúne muitas árvores e arbustos nativos, vários deles com frutos carnosos e forte relação com a fauna. Para esta muda, o nome científico informado é Eugenia itapemirimensis.',
+    'Espécies pouco conhecidas mostram como a Mata Atlântica ainda guarda uma diversidade que raramente chega ao cotidiano das pessoas.',
+    'Usos e sabores',
+    'O destaque desta espécie está em apresentar a diversidade do gênero Eugenia e despertar curiosidade sobre plantas nativas pouco conhecidas.',
+    'Como outras mirtáceas, integra relações de polinização e dispersão de sementes com diferentes animais da Mata Atlântica.',
+    [['SOL','Sol ou meia-sombra'],['REGA','Manter solo levemente úmido no início'],['SOLO','Rico em matéria orgânica'],['PORTE','Variável'],['FLORAÇÃO','Sazonal'],['FRUTIFICAÇÃO','Sazonal']],
+    'O próprio fato de ser pouco conhecida é um convite para olhar a flora nativa além das espécies mais famosas.',
+    [],
+    'VALIDAR: confirmar se a muda é realmente Eugenia itapemirimensis e revisar porte, distribuição, frutificação e eventual uso alimentar antes da publicação final.'
+  ),
+  tapereba: c(
+    'Fruto amarelo, aromático e ácido, muito conhecido no Norte e Nordeste do Brasil.',
+    'O taperebazeiro é uma árvore tropical que produz cachos de frutos amarelos e perfumados. Em diferentes regiões, o fruto também é conhecido como cajá.',
+    'Seu uso atravessa feiras, quintais e cozinhas regionais, onde a polpa é valorizada principalmente pelo aroma e pela acidez refrescante.',
+    'Sabores',
+    'É usado em sucos, sorvetes, doces, geleias, mousses e outras preparações em que a acidez da polpa aparece como protagonista.',
+    'Os frutos alimentam animais e ajudam na dispersão de sementes, enquanto a copa integra ambientes tropicais diversos.',
+    [['SOL','Sol pleno'],['REGA','Regular no estabelecimento'],['SOLO','Profundo e drenado'],['PORTE','Árvore de médio a grande porte'],['FLORAÇÃO','Sazonal'],['FRUTIFICAÇÃO','Em cachos']],
+    'O mesmo fruto pode mudar de nome conforme a região: taperebá e cajá são os mais conhecidos.',
+    ['Suco','Sorvete','Doce','Geleia']
+  ),
+  'araca-roxo': c(
+    'Um araçá nativo de frutos que amadurecem em tons escuros e sabor marcante.',
+    'O araçá-roxo pertence à família das mirtáceas. Como outros araçás, produz frutos carnosos, aromáticos e muito ligados à fauna e aos quintais brasileiros.',
+    'Araçás formam um grupo diverso de frutas nativas que durante muito tempo ficaram restritas ao consumo local.',
+    'Sabores',
+    'Os frutos podem ser apreciados frescos e usados em geleias, doces, sucos e preparações que valorizem sua acidez e perfume.',
+    'Flores oferecem recursos a polinizadores e os frutos podem ser consumidos por aves e outros animais.',
+    [['SOL','Sol pleno ou meia-sombra'],['REGA','Regular quando jovem'],['SOLO','Bem drenado'],['PORTE','Arbusto ou pequena árvore'],['FLORAÇÃO','Sazonal'],['FRUTIFICAÇÃO','Frutos pequenos e aromáticos']],
+    'O nome “araçá” é usado para várias espécies diferentes, por isso o nome científico é essencial na identificação.',
+    ['In natura','Geleia','Doce','Suco']
+  ),
+  'mamao-jaracatia': c(
+    'Parente nativo do mamoeiro, com tronco característico e frutos que amadurecem em tons amarelos e alaranjados.',
+    'Jacaratia spinosa é uma árvore tropical da família do mamão. Seus frutos são consumidos em algumas regiões, mas o manejo tradicional exige conhecimento sobre o ponto de maturação.',
+    'O jaracatiá aparece na memória alimentar de comunidades e em iniciativas que recuperam frutas nativas pouco comercializadas.',
+    'Sabores',
+    'O fruto maduro pode ser usado em doces e preparações regionais. Para consumo, é importante trabalhar apenas com frutos corretamente identificados e maduros.',
+    'Árvores frutíferas nativas fornecem alimento para a fauna e ajudam a ampliar a diversidade em áreas de restauração.',
+    [['SOL','Sol pleno'],['REGA','Regular quando jovem'],['SOLO','Drenado e fértil'],['PORTE','Árvore de médio a grande porte'],['CRESCIMENTO','Vigoroso em boas condições'],['FRUTIFICAÇÃO','Frutos diretamente em ramos e tronco']],
+    'Apesar do nome, não é o mesmo mamoeiro cultivado comercialmente.',
+    ['Doce','Compota','Fruto maduro']
+  ),
+  'figueira-branca': c(
+    'Uma figueira nativa apresentada no festival, pertencente a um grupo de árvores fundamentais para a fauna.',
+    'Figueiras do gênero Ficus produzem estruturas conhecidas como figos, que servem de alimento para muitos animais. O nome “figueira-branca” é usado para espécies diferentes em várias regiões.',
+    'Figueiras têm forte presença cultural e ecológica, e muitas se tornam árvores de grande porte em florestas e paisagens rurais.',
+    'Usos e relações',
+    'O destaque desta figueira no festival é ecológico, especialmente por sua relação com a fauna e com a dinâmica da floresta.',
+    'Figueiras são especialmente importantes para aves, morcegos e outros frugívoros, que ajudam a dispersar suas sementes.',
+    [['SOL','Sol pleno ou meia-sombra'],['REGA','Regular no estabelecimento'],['SOLO','Adaptável, conforme espécie'],['PORTE','Pode atingir grande porte'],['ESPAÇO','Plantar longe de estruturas'],['FRUTIFICAÇÃO','Pode alimentar fauna em diferentes épocas']],
+    'Cada espécie de figueira mantém uma relação muito específica com pequenas vespas polinizadoras.',
+    [],
+    'VALIDAR: “figueira-branca” é um nome popular ambíguo. Confirmar o nome científico da muda antes da versão final. Não assumir Ficus insipida sem conferência.'
+  ),
+  'paineira-rosa': c(
+    'Árvore de floração exuberante, tronco marcante e frutos que liberam uma fibra branca e leve.',
+    'A paineira-rosa é uma árvore nativa muito reconhecível pelas flores rosadas e, em exemplares jovens, pelos acúleos no tronco.',
+    'A paina de seus frutos já foi usada como enchimento, e a árvore se tornou comum também no paisagismo urbano.',
+    'Usos e relações',
+    'O destaque aqui não é culinário, mas paisagístico, cultural e ecológico. Flores chamativas atraem visitantes florais.',
+    'Árvores adultas oferecem abrigo e recursos para diferentes organismos e contribuem para a estrutura da paisagem.',
+    [['SOL','Sol pleno'],['REGA','Regular quando jovem'],['SOLO','Drenado'],['PORTE','Árvore de grande porte'],['FLORAÇÃO','Muito vistosa'],['ESPAÇO','Precisa de área ampla']],
+    'A fibra branca dentro dos frutos é a “paina” que dá nome à árvore.',
+    []
+  ),
+  araucaria: c(
+    'Uma das árvores mais emblemáticas do Sul e Sudeste do Brasil, conhecida pela copa em forma de candelabro e pelo pinhão.',
+    'Araucaria angustifolia é uma conífera nativa de regiões subtropicais. Sua silhueta define paisagens inteiras da Floresta com Araucária.',
+    'O pinhão faz parte da alimentação e da cultura de diversas comunidades, especialmente no Sul do país.',
+    'Sabores',
+    'O pinhão é a semente comestível da araucária e pode ser cozido, assado ou usado em pratos salgados e doces.',
+    'As sementes alimentam animais e a árvore é peça central de um ecossistema próprio, associado à Mata Atlântica.',
+    [['SOL','Sol pleno'],['REGA','Regular quando jovem'],['SOLO','Profundo e bem drenado'],['PORTE','Árvore de grande porte'],['CLIMA','Prefere condições subtropicais'],['ESPAÇO','Necessita área ampla']],
+    'O que chamamos de “pinhão” é a semente da araucária, não um fruto.',
+    ['Pinhão cozido','Farofa','Sopas','Doces']
+  ),
+  'canela-amarela': c(
+    'Uma árvore chamada popularmente de canela-amarela, nome compartilhado por diferentes espécies da família Lauraceae.',
+    'As “canelas” nativas são árvores aromáticas de grande importância florestal. Folhas, cascas e madeira podem ter aromas marcantes, mas isso não significa que sejam equivalentes à canela culinária.',
+    'Nomes populares como canela-amarela variam muito entre regiões e podem se referir a diferentes árvores da família Lauraceae.',
+    'Usos e relações',
+    'O destaque aqui é botânico, ecológico e aromático, sem associação direta com a canela usada na culinária.',
+    'Frutos de muitas Lauraceae são consumidos por aves, e as árvores integram florestas maduras e em regeneração.',
+    [['SOL','Sol ou meia-sombra'],['REGA','Regular no início'],['SOLO','Rico e drenado'],['PORTE','Geralmente árvore'],['FLORAÇÃO','Variável'],['FRUTIFICAÇÃO','Variável']],
+    '“Canela” é um dos nomes populares mais compartilhados entre árvores brasileiras diferentes.',
+    [],
+    'VALIDAR: confirmar o nome científico da “canela-amarela”. Nectandra lanceolata é uma possibilidade em algumas regiões, mas não deve ser adotada sem confirmação da muda.'
+  ),
+  bandarra: c(
+    'Uma árvore apresentada como bandarra, de crescimento rápido e forte presença visual quando floresce.',
+    'A imagem e o material levantado sugerem uma árvore próxima de Schizolobium parahyba, conhecida em diferentes regiões por nomes como guapuruvu e outros nomes locais.',
+    'Espécies de crescimento rápido são importantes em processos de regeneração e também aparecem no paisagismo por seu porte e copa.',
+    'Usos e relações',
+    'O foco desta espécie no festival é ecológico e paisagístico, valorizando seu porte, crescimento e papel na regeneração.',
+    'Árvores pioneiras ajudam a ocupar áreas abertas, criar sombra e facilitar a chegada de outras espécies.',
+    [['SOL','Sol pleno'],['REGA','Regular quando jovem'],['SOLO','Bem drenado'],['PORTE','Grande porte'],['CRESCIMENTO','Rápido'],['ESPAÇO','Plantar em área ampla']],
+    'Algumas árvores pioneiras crescem muito rápido justamente porque estão adaptadas a ocupar clareiras e áreas abertas.',
+    [],
+    'VALIDAR: confirmar se “Bandarra” corresponde de fato a Schizolobium parahyba. A imagem anterior e o nome de arquivo apontam nessa direção, mas o nome popular pode variar.'
+  ),
+  'amescla-de-cheiro': c(
+    'Árvore aromática conhecida pelo perfume de sua resina e por diferentes usos tradicionais.',
+    'A amescla-de-cheiro costuma ser associada ao gênero Protium, grupo de árvores resinosas da família Burseraceae. Para esta muda, Protium heptaphyllum é uma hipótese plausível.',
+    'Resinas aromáticas de Protium fazem parte de práticas tradicionais e ajudam a explicar nomes populares ligados a cheiro e incenso.',
+    'Usos e relações',
+    'O interesse aqui está no aroma, na história de uso da resina e na ecologia da árvore. Não recomendamos ingestão ou uso medicinal sem orientação especializada.',
+    'Seus frutos e copa participam das relações com a fauna e a espécie pode integrar diferentes formações florestais brasileiras.',
+    [['SOL','Sol ou meia-sombra'],['REGA','Regular quando jovem'],['SOLO','Bem drenado'],['PORTE','Árvore'],['RESINA','Evitar ferir a planta'],['MANEJO','Cultivo com identificação correta']],
+    'O aroma vem de compostos presentes na resina, característica marcante de várias espécies da família Burseraceae.',
+    [],
+    'VALIDAR: confirmar se a muda é Protium heptaphyllum. O nome popular “amescla” também pode ser aplicado a outras espécies de Protium.'
+  ),
+  pitanga: c(
+    'Uma das frutas nativas mais conhecidas do Brasil, com gomos marcados e cores que vão do laranja ao vermelho-escuro.',
+    'A pitangueira é uma mirtácea nativa, muito comum em quintais e jardins. Seus frutos são aromáticos e podem variar bastante em doçura e acidez.',
+    'A pitanga atravessa memória afetiva, alimentação caseira e paisagismo, sendo uma porta de entrada para conhecer outras frutas nativas.',
+    'Sabores',
+    'Pode ser consumida fresca e usada em sucos, geleias, sorvetes, doces, molhos e bebidas.',
+    'Flores atraem polinizadores e os frutos alimentam aves e outros animais.',
+    [['SOL','Sol pleno'],['REGA','Regular no início'],['SOLO','Drenado e fértil'],['PORTE','Arbusto ou pequena árvore'],['PODA','Aceita poda de formação'],['FRUTIFICAÇÃO','Pode ocorrer mais de uma vez ao ano em boas condições']],
+    'Existem pitangas de diferentes cores, inclusive quase pretas quando maduras.',
+    ['In natura','Suco','Geleia','Sorvete','Bebidas']
+  ),
+  jucara: c(
+    'Palmeira nativa da Mata Atlântica, conhecida pelos frutos escuros usados para produzir uma polpa semelhante ao açaí.',
+    'Euterpe edulis é uma palmeira de tronco único. Diferentemente do corte para palmito, a colheita dos frutos permite manter a planta viva quando feita de forma responsável.',
+    'A valorização da polpa de juçara se tornou também uma estratégia de conservação, criando valor econômico sem derrubar a palmeira.',
+    'Sabores',
+    'A polpa dos frutos pode ser servida pura ou em preparações doces e salgadas, lembrando o uso do açaí, mas com identidade própria.',
+    'Os frutos alimentam muitas aves e mamíferos. A presença da juçara é importante para a fauna da Mata Atlântica.',
+    [['SOL','Meia-sombra quando jovem'],['REGA','Gosta de umidade'],['SOLO','Rico em matéria orgânica'],['PORTE','Palmeira alta'],['CLIMA','Úmido'],['COLHEITA','Preferir frutos; evitar corte do palmito']],
+    'A mesma palmeira que produz o fruto também produz palmito — mas o corte do palmito mata o indivíduo porque ela tem um único caule.',
+    ['Polpa','Sorvete','Bebidas','Molhos']
+  ),
+  cabeludinha: c(
+    'Frutinha amarela coberta por uma fina penugem, de polpa suculenta e aparência muito característica.',
+    'A cabeludinha é uma mirtácea frutífera de pequeno porte. O nome costuma ser associado a Myrciaria glazioviana, mas há confusão de nomes em materiais horticulturais.',
+    'É uma fruta de quintal que exemplifica a enorme diversidade de mirtáceas brasileiras além de jabuticaba, pitanga e goiaba.',
+    'Sabores',
+    'O fruto maduro costuma ser consumido fresco e pode entrar em sucos, geleias e doces.',
+    'Flores e frutos criam recursos para polinizadores e pequenos animais frugívoros.',
+    [['SOL','Sol pleno ou meia-sombra'],['REGA','Regular'],['SOLO','Fértil e drenado'],['PORTE','Arbusto ou pequena árvore'],['CULTIVO','Bom para quintais'],['FRUTIFICAÇÃO','Frutos pequenos e delicados']],
+    'A “cabeludinha” recebe esse nome por causa dos finos pelos na casca do fruto.',
+    ['In natura','Suco','Geleia'],
+    'VALIDAR: confirmar se a muda é Myrciaria glazioviana. Há circulação de outros nomes científicos para “cabeludinha” em viveiros e publicações antigas.'
+  ),
+  jatoba: c(
+    'Árvore de grande porte que produz vagens duras com uma polpa seca, aromática e comestível.',
+    'O nome jatobá é usado para várias espécies do gênero Hymenaea, árvores conhecidas pelas vagens duras e pela polpa farinácea dos frutos.',
+    'A polpa farinácea do fruto faz parte de usos tradicionais e pode ser transformada em farinhas e preparações alimentares.',
+    'Sabores',
+    'A polpa seca é naturalmente adocicada e pode ser usada em farinhas, mingaus, bolos, biscoitos e bebidas.',
+    'Árvores adultas oferecem estrutura, flores e frutos para diversos organismos e podem atingir grande longevidade.',
+    [['SOL','Sol pleno'],['REGA','Regular quando jovem'],['SOLO','Profundo e drenado'],['PORTE','Grande árvore'],['CRESCIMENTO','Lento a moderado'],['ESPAÇO','Precisa de área ampla']],
+    'A polpa do jatobá é seca e farinácea — muito diferente da polpa úmida da maioria das frutas.',
+    ['Farinha','Bolo','Mingau','Bebida'],
+    'VALIDAR: confirmar a espécie do jatobá da muda. Hymenaea courbaril é uma hipótese comum, mas outros Hymenaea também recebem esse nome.'
+  ),
+  biriba: c(
+    'Fruto de polpa clara e doce, conhecido em diferentes regiões pelo nome biribá.',
+    'O nome “biribá” pode ser usado para diferentes espécies de Annona. Na alimentação brasileira, Annona mucosa é uma referência frequente, mas a foto enviada anteriormente veio identificada como Annona purpurea.',
+    'Essa divergência mostra por que a identificação botânica é tão importante quando um nome popular circula entre regiões diferentes.',
+    'Sabores',
+    'Biribás comestíveis costumam ser consumidos frescos e também aparecem em cremes, doces, sorvetes e bebidas.',
+    'Frutos de anonáceas alimentam animais e as árvores integram ambientes tropicais.',
+    [['SOL','Sol pleno'],['REGA','Regular no estabelecimento'],['SOLO','Fértil e drenado'],['PORTE','Pequena a média árvore'],['CLIMA','Tropical'],['FRUTIFICAÇÃO','Sazonal']],
+    'Um mesmo nome popular pode apontar para plantas diferentes — e o biribá deste festival é um ótimo exemplo disso.',
+    ['In natura','Sorvete','Creme'],
+    'VALIDAR COM PRIORIDADE: confirmar o nome científico da muda e da foto. Annona mucosa é o biribá alimentício mais citado no Brasil, enquanto a imagem enviada veio nomeada Annona purpurea.'
+  ),
+  tucaneira: c(
+    'Árvore nativa cujos frutos coloridos ajudam a explicar seu nome: são muito atrativos para aves.',
+    'A tucaneira é uma árvore nativa conhecida pelos cachos de frutos que mudam de cor durante o amadurecimento e atraem muitas aves.',
+    'Árvores frutíferas voltadas à fauna têm grande valor em restauração ecológica e em paisagens que buscam atrair aves.',
+    'Usos e relações',
+    'O destaque da tucaneira é sua relação com a fauna e seu uso em recuperação ambiental e paisagismo ecológico.',
+    'Frutos são consumidos por aves, que ajudam a levar sementes para outras áreas.',
+    [['SOL','Sol pleno'],['REGA','Regular quando jovem'],['SOLO','Adaptável e drenado'],['PORTE','Árvore de médio porte'],['USO','Boa para restauração'],['FRUTIFICAÇÃO','Cachos atrativos para fauna']],
+    'Plantar espécies que alimentam aves também ajuda a trazer dispersores de sementes de volta à paisagem.',
+    [],
+    'VALIDAR: confirmar se a muda é Citharexylum myrianthum. O nome do arquivo enviado aponta para essa espécie.'
+  ),
+  'guabiroba-gigante': c(
+    'Uma Campomanesia apresentada como guabiroba-gigante, com frutos verdes e forte relação com a diversidade de frutas nativas brasileiras.',
+    'O nome Campomanesia lorenziana aparece em materiais botânicos e, em classificações atuais, é associado a Campomanesia sessiliflora var. sessiliflora.',
+    'A situação é interessante porque mostra que a botânica também muda: nomes científicos podem ser revisados quando novas pesquisas reorganizam as relações entre espécies.',
+    'Sabores',
+    'Como outras gabirobas, chama atenção pelos frutos aromáticos e pelo potencial de aproximar biodiversidade, quintais e gastronomia.',
+    'Campomanesia reúne espécies importantes para fauna, polinizadores e diversidade de áreas nativas.',
+    [['SOL','Sol pleno ou meia-sombra'],['REGA','Regular no início'],['SOLO','Drenado e rico em matéria orgânica'],['PORTE','Variável'],['FLORAÇÃO','Sazonal'],['FRUTIFICAÇÃO','Sazonal']],
+    'Uma mesma planta pode aparecer com nomes científicos diferentes em materiais antigos e bases atuais devido a revisões taxonômicas.',
+    ['Fruto fresco','Geleias','Bebidas'],
+    'VALIDAR COM PRIORIDADE: confirmar a etiqueta da muda. “Campomanesia lorenziana” aparece em base taxonômica atual como sinônimo de Campomanesia sessiliflora var. sessiliflora.'
+  ),
+}
